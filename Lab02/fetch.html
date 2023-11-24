@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>fetch</h1>
+<div id="text"></div>
+</body>
+<script>
+    fetch('http://localhost:5000/api/name').then((response)=> response.text())
+        .then(text => document.getElementById('text').innerText = text)
+    .catch(()=>{
+        let div = document.getElementById('text');
+        div.innerText = 'Error!';
+    })
+</script>
+</html>
